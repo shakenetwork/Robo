@@ -58,4 +58,11 @@
     "replace": {
         "codegyre/robo": "< 1.0"
     }
+    ,
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
 }

@@ -16,6 +16,12 @@ if (strpos(basename(__FILE__), 'phar')) {
         require_once 'phar://robo.phar/vendor/autoload.php';
     }
 }
+$_SERVER['CWD'] = getcwd();
+if( file_exists( $_SERVER['HOME'].'/.mpm/RoboFile.php' ) ) 
+{   
+        $_SERVER['argv'][] = '--load-from';
+        $_SERVER['argv'][] = $_SERVER['HOME'].'/.mpm/RoboFile.php';
+}
 $runner = new \Robo\Runner();
 $statusCode = $runner->execute($_SERVER['argv']);
 exit($statusCode);
